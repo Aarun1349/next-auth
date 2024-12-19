@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server";
 
-
 export async function GET() {
   try {
-    // const response = await axios.get("/api/users/logout");
-
-    const response = NextResponse.json({
+      const response = NextResponse.json({
       message: "Logout Successfully",
       success: true,
     });
