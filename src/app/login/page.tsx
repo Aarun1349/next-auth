@@ -15,7 +15,7 @@ const LoginPage = () => {
   const handleLogin = async () => {
     try {
       setLoading(true);
-      const response = await axios.post("/api/users/login",user);
+       await axios.post("/api/users/login",user);
       toast.success("login success")
       // router.push(`/profile/${response.data.data.email}`);
       router.push(`/profile`);

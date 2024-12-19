@@ -1,17 +1,16 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 const VerifyEmail = () => {
-  const router = useRouter();
+  
   const [token, setToken] = useState("");
   const [verified, setVerified] = useState(false);
   const [error, setError] = useState(false);
   const verifyUserEmail = async () => {
     try {
-      const response = await axios.post(`/api/users/verifyemail/`, { token });
+      await axios.post(`/api/users/verifyemail/`, { token });
       setVerified(true);
       // console.log(response.data);
     } catch (error: any) {

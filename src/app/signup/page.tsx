@@ -76,7 +76,7 @@ const SignUpPage = () => {
         className="focus:outline-none focus:border-gray-600 text-gray-800 capitalize rounded-md p-3 m-2"
       />
       <button
-        onClick={(e) => handleSignUp()}
+        onClick={() => handleSignUp()}
         className="mt-2 bg-white text-gray-900 rounded-md py-3 px-8  m-2 capitalize hover:bg-gray-600 hover-text-white hover:font-bold"
       >
         {buttonDisabled ? "Fill all Fields" : "Sign up"}

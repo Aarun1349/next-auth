@@ -6,14 +6,14 @@ import toast from "react-hot-toast/headless";
 export default function ProfilePage() {
   const router = useRouter();
   interface userType {
-    _id: String;
-    username: String;
-    email: String;
-    isVerified: Boolean;
+    _id: string;
+    username: string;
+    email: string;
+    isVerified: boolean;
   }
   const handleLogout = async () => {
     try {
-      const logout = await axios.get("/api/users/logout");
+       await axios.get("/api/users/logout");
       toast.success("Logout Successful");
       router.push("/login");
     } catch (error: any) {
