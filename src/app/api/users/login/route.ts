@@ -17,9 +17,7 @@ export async function POST(request: NextRequest) {
     if (!user) {
       return NextResponse.json({ error: "User not exist" }, { status: 404 });
     }
-    //hash password
-    // const salt = await bcryptjs.genSalt(10);
-    // const hashedPassword = await bcryptjs.hash(password, salt);
+   
     console.log(user.password,password);
     const comparePassword = await bcryptjs.compare(password, user.password);
     console.log(user.password,password,comparePassword);
@@ -37,7 +35,7 @@ export async function POST(request: NextRequest) {
       email: user.email,
     };
     //create token
-    const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET, {
+    const token = jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
       expiresIn: "1h",
     });
 
